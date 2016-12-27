@@ -1,4 +1,5 @@
 rm(list = ls())
+library(ggplot2)
 
 # create data
 x <- c(8,7,6,7,6,5,6,5,4,5,4,3,4,3,2,3,2,1,0.5,0.1)
@@ -19,7 +20,7 @@ for (row in 1:nrow(dat1)){
   
   if (rnorm(1) > dec_threshold){
     
-    dat1$xvar[row] <- row  #sample(1:dat1$x1[row],1)
+    dat1$xvar[row] <- row 
     dat1$yvar[row] <- sample(1:dat1$x2[row]-1,1)
     dat1$siz[row] <- runif(1,0.5,1.5)
     dat1$col[row] <- sample(1:5, 1)
@@ -27,7 +28,7 @@ for (row in 1:nrow(dat1)){
   
   if (rnorm(1) > dec_threshold){
     
-    dat2$xvar[row] <- row #sample(1:dat2$x1[row],1)
+    dat2$xvar[row] <- row 
     dat2$yvar[row] <- sample(1:dat2$x2[row],1)
     dat2$siz[row] <- runif(1,0.5,1.5)
     dat2$col[row] <- sample(1:5, 1)
